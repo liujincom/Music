@@ -1,0 +1,51 @@
+﻿@model MvcMusicStore.Models.Album
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>唱片详情</h2>
+
+<fieldset>
+    <legend>Album</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GenreId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GenreId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ArtistId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ArtistId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AlbumArtUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AlbumArtUrl)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("修改", "Edit", new { id=Model.AlbumId }) |
+    @Html.ActionLink("返回", "Index")
+</p>

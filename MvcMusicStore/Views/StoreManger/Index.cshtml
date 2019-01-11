@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Album>
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>音乐商店-目录</h2>
+
+<p>
+    @Html.ActionLink("新增", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+           流派
+        </th>
+        <th>
+            艺术家
+        </th>
+        <th>
+            标题
+        </th>
+        <th>
+           价格(美金)
+        </th>
+        <th>
+            操作
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GenreId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtistId,25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title,25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id=item.AlbumId }) |
+            @Html.ActionLink("详细", "Details", new { id=item.AlbumId }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.AlbumId })
+        </td>
+    </tr>
+}
+
+</table>

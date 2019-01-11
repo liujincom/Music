@@ -1,0 +1,20 @@
+﻿@model MvcMusicStore.Models.Album
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>删除唱片</h2>
+
+<h3>你真的想删除这个唱片吗？</h3>
+
+
+<strong>@Model.Title</strong>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="删除" /> |
+        @Html.ActionLink("返回", "Index")
+    </p>
+}

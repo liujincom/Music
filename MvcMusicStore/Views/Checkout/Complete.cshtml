@@ -1,0 +1,19 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Checkout Complete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    结帐完成
+
+</h2>
+<p>
+    
+    感谢您的订单！您的订单号是： @Model
+</p>
+<p>
+    如何在我们的 @Html.ActionLink("商店", "Index", "Home")购买更多音乐;
+</p>
+

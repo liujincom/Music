@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Genre>
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>音乐类别</h3>
+<p>
+    为你找到 @Model.Count() 个种类的唱片;
+</p>
+<ul>
+    @foreach (var genre in Model)
+    {
+        
+        <li>  @Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name }) </li>
+    }
+</ul>
